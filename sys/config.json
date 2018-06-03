@@ -4,5 +4,6 @@
 	"gamepad_deadzone_low": -23000,
 	"gamepad_deadzone_high": 13913,
 	"gamepad_linux_fix": 1,
+	"icon_size": 256,
 	"wallpaper": "wallpaper.gif"
 }

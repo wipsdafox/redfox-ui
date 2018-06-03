@@ -1,2 +1,8 @@
 createdialog(string):
 Create a dialog on screen showing the message as a string.
+
+displayImage(x, y, path):
+Display an image on screen
+
+preloadImage(path):
+Load an image into memory. Returns Tkinter PhotoImage instance. Rarely needed.

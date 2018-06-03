@@ -1,20 +1,30 @@
-print("INFO: Importing libraries...")
-from time import gmtime, strftime, localtime
-import sys, importlib, os, json
-#from inputs import devices, get_gamepad
-if sys.version_info[0] == 2: #Check python version
-    from Tkinter import *
-else:
-    from tkinter import *
+def log(text):
+    print(text)
+    with open("log.txt", "a") as myfile:
+        myfile.write("appended text")
+
+log("INFO: Importing libraries...")
+try:
+    from time import gmtime, strftime, localtime
+    import sys, importlib, os, json
+    #from inputs import devices, get_gamepad
+    if sys.version_info[0] == 2: #Check python version
+        from Tkinter import *
+    else:
+        from tkinter import *
+except:
+    log("FATAL: Couldnt load libraries!")
+    while True:
+
 
 #Load system stuff
-print("INFO: Loading system files...")
+log("INFO: Loading system files...")
 exec(open("sys/system.py").read())
 exec(open("sys/display.py").read())
 exec(open("sys/keyboard.py").read())
 
 if(enablegamepad == 1):
-    print("INFO: Loading gamepad...")
+    log("INFO: Loading gamepad...")
     exec(open("sys/gamepad.py").read())
 
 drawHome()

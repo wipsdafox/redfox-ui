@@ -1,6 +1,7 @@
 0.5a:
 -Added update app
 -Fixed icon support
+-Added icons for all built-in (launchable) apps
 
 0.4a:
 -Clicking dialog boxes causes them to go away

@@ -1,5 +1,5 @@
 {
-  "icon": "none",
+  "icon": "osktest.gif",
   "displayname": "OSK Test",
   "bgcolor": "#2fb229",
   "file": "kbdtest.py"

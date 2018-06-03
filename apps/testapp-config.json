@@ -1,5 +1,5 @@
 {
-  "icon": "none",
+  "icon": "testapp.gif",
   "displayname": "Test App",
   "bgcolor": "#f72274",
   "file": "testapp.py"

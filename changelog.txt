@@ -1,0 +1,33 @@
+0.4a:
+-Clicking dialog boxes causes them to go away
+-Home screen now displays all apps with proper config files
+-Code has more comments
+-Removed terminal.
+-Removed useless files and config strings.
+-Added basic on screen keyboard and a simple test app to go with it (Shift and backspace don't work yet)
+-Statusbar now sorta transparent
+-Added License
+
+0.3a:
+-Added gamepad support. Enable/disable in config. (Dpad doesnt work yet)
+-Added basic documentation.
+-Added home screen app icons that work
+-Added gamepad test programs (gptest and gpenable)
+-Terminal no longer starts automatically
+-Statusbar now shows time instead of version
+-Better logging
+
+0.2a:
+-Cleaned up code.
+-Removed Dock
+-Removed home.py (unneeded)
+-Removed app icon drawing (for now)
+-Added backspace functionality to terminal
+-Config file added
+-Added white background
+-Statusbar is now white
+-Statusbar text is now on the left
+-Moved some stuff to system.py
+
+0.1a:
+-First alpha version

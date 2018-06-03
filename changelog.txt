@@ -1,3 +1,7 @@
+0.5a:
+-Added update app
+-Fixed icon support
+
 0.4a:
 -Clicking dialog boxes causes them to go away
 -Home screen now displays all apps with proper config files

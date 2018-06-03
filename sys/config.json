@@ -3,5 +3,6 @@
 	"gamepad_trigger_deadzone": 150,
 	"gamepad_deadzone_low": -23000,
 	"gamepad_deadzone_high": 13913,
-	"gamepad_linux_fix": 1
+	"gamepad_linux_fix": 1,
+	"wallpaper": "wallpaper.gif"
 }

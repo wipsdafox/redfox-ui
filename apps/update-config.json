@@ -1,0 +1,6 @@
+{
+  "icon": "redfox-update.gif",
+  "displayname": "Updater",
+  "bgcolor": "#f72274",
+  "file": "update.py"
+}

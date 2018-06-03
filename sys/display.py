@@ -20,6 +20,8 @@ white = "#fff"
 #Prepare global variables
 global appicons #App icon storage
 appicons = []
+global appImages
+appImages = []
 global currentDialog #Dialog storage
 currentDialog = []
 global clock #Clock
@@ -51,8 +53,17 @@ def drawAppIcon(x, y, app):
         save = display.create_rectangle(x, y, x + 256, y + 256, fill = appConfig["bgcolor"], tags = appConfig["file"])
         display.create_text(x + 128, y + 128, text = appConfig["displayname"], fill = white)
     else:
-        #Otherwise, display the image.
-        save = display.create_image(x, y, image = PhotoImage(file = appConfig["icon"]), tags = appConfig["file"])
+        try:
+            #Otherwise, display the image.
+            img = PhotoImage(file = "apps/" + appConfig["icon"])
+            appImages.append(img)
+            save = display.create_image(x, y, image = img, tags = appConfig["file"], anchor = NW)
+
+        except:
+            print("Error displaying app icon!")
+            #Create a rectangle with the background color, and add some text with the app name
+            save = display.create_rectangle(x, y, x + 256, y + 256, fill = appConfig["bgcolor"], tags = appConfig["file"])
+            display.create_text(x + 128, y + 128, text = appConfig["displayname"], fill = white)
 
     appicons.append(save) #Add ID to appicons variable.
     display.tag_bind(appicons[len(appicons) - 1], '<ButtonPress-1>', launchApp) #Bind it to the launchApp function.
@@ -67,6 +78,13 @@ def drawHome():
     global clock
     display.delete(all) #Clear screen incase we are updating the whole display
     display.create_rectangle(0, 0, screen_width, screen_height, fill = white) #Draw Background
+    if(data["wallpaper"] != "none"):
+        try:
+            global wallpaper
+            wallpaper = PhotoImage(file = data["wallpaper"])
+            display.create_image(screen_width / 2, screen_height / 2, image = wallpaper) #Draw wallpaper
+        except:
+            print("Error while displaying wallpaper!")
     display.create_rectangle(0, 0, screen_width, 18, fill = "#c9ced6", outline = "#c9ced6", stipple = "gray50") #Draw statusbar
     clock = display.create_text(3, 3, text = strftime("%H:%M", localtime()), fill = black, anchor = NW) #Draw clock on status bar
     updateClock()

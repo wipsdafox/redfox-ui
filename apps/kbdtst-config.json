@@ -1,0 +1,6 @@
+{
+  "icon": "none",
+  "displayname": "OSK Test",
+  "bgcolor": "#2fb229",
+  "file": "kbdtest.py"
+}

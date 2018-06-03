@@ -1,0 +1,5 @@
+{
+	"icon": "dev-mode.png",
+	"label": "Test",
+	"app_path": "testapp.py"
+}

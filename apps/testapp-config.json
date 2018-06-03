@@ -1,0 +1,6 @@
+{
+  "icon": "none",
+  "displayname": "Test App",
+  "bgcolor": "#f72274",
+  "file": "testapp.py"
+}

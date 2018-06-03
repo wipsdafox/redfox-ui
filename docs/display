@@ -1,0 +1,2 @@
+createdialog(string):
+Create a dialog on screen showing the message as a string.

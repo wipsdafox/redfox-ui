@@ -1,0 +1,30 @@
+gp_refresh():
+Get all button events.
+
+gp_buttons:
+Global variable. Contains input values.
+NOTE: These values were coded for LINUX, running WITHOUT ROOT (X and Y buttons are switched)
+To account for this on other operating systems or with root, please change "gamepad_linux_fix" to 0 in sys/sys.json or change "gp_fix" to 0 
+in your code BEFORE using these buttons.
+
+gp_buttons["a"]: A button on an Xbox 360 controller
+gp_buttons["b"]: B button on an Xbox 360 controller
+gp_buttons["x"]: X button on an Xbox 360 controller
+gp_buttons["y"]: Y button on an Xbox 360 controller
+gp_buttons["ls"]: Left shoulder button on an Xbox 360 controller
+gp_buttons["rs"]: Right shoulder button on an Xbox 360 controller
+gp_buttons["lt"]: Left analog trigger on an Xbox 360 controller
+gp_buttons["rt"]: Right analog trigger on an Xbox 360 controller
+gp_buttons["pad_lx"]: Left thumbstick X position on an Xbox 360 controller
+gp_buttons["pad_ly"]: Left thumbstick Y position on an Xbox 360 controller
+gp_buttons["pad_rx"]: Right thumbstick X position on an Xbox 360 controller
+gp_buttons["pad_ry"]: Right thumbstick Y position on an Xbox 360 controller
+
+gp_tdeadzone:
+Gamepad analog trigger deadzone variables.
+
+gp_deadzone_high:
+Gamepad thumbstick deadzone (Right for X axis, down for Y axis)
+
+gp_deadzone_low:
+Gamepad thumbstick deadzone (Left for X axis, up for Y axis)

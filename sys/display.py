@@ -34,9 +34,9 @@ def preloadImage(path):
     imageStorage.append(img) #Store it in the global image variable
     return img #Return the file
 
-def displayImage(x, y, path):
+def displayImage(x, y, path, tag=0):
     imgFile = preloadImage(path) #Load the image
-    imgId = display.create_image(x, y, image = imgFile, anchor = NW) #Display the image and get an ID
+    imgId = display.create_image(x, y, image = imgFile, anchor = NW, tags = tag) #Display the image and get an ID
     return imgId #Return the ID
 
 def deleteDialog(event):
@@ -62,15 +62,15 @@ def drawAppIcon(x, y, app):
     appConfig = json.load(open("apps/" + app + "-config.json")) #Parse app config.json file
     if(appConfig["icon"] == "none"): #If the app has no icon file,
         #Create a rectangle with the background color, and add some text with the app name
-        save = display.create_rectangle(x, y, x + 256, y + 256, fill = appConfig["bgcolor"], tags = appConfig["file"])
-        display.create_text(x + 128, y + 128, text = appConfig["displayname"], fill = white)
+        save = display.create_rectangle(x, y, x + icon_size, y + icon_size, fill = appConfig["bgcolor"], tags = appConfig["file"])
+        display.create_text(x + (icon_size / 2), y + (icon_size / 2), text = appConfig["displayname"], fill = white)
     else:
         try:
-            save = displayImage(x, y, "apps/" + appConfig["icon"])
+            save = displayImage(x, y, "apps/" + appConfig["icon"], tag = appConfig["file"])
         except:
             log("Error displaying app icon!")
             save = display.create_rectangle(x, y, x + icon_size, y + icon_size, fill = appConfig["bgcolor"], tags = appConfig["file"])
-            display.create_text(x + icon_size / 2, y + icon_size / 2, text = appConfig["displayname"], fill = white)
+            display.create_text(x + (icon_size / 2), y + (icon_size / 2), text = appConfig["displayname"], fill = white)
 
     appicons.append(save) #Add ID to appicons variable.
     display.tag_bind(appicons[len(appicons) - 1], '<ButtonPress-1>', launchApp) #Bind it to the launchApp function.

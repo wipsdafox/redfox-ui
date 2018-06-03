@@ -1,21 +1,16 @@
 def log(text):
     print(text)
     with open("log.txt", "a") as myfile:
-        myfile.write("appended text")
+        myfile.write(text)
 
 log("INFO: Importing libraries...")
-try:
-    from time import gmtime, strftime, localtime
-    import sys, importlib, os, json
-    #from inputs import devices, get_gamepad
-    if sys.version_info[0] == 2: #Check python version
-        from Tkinter import *
-    else:
-        from tkinter import *
-except:
-    log("FATAL: Couldnt load libraries!")
-    while True:
-
+from time import gmtime, strftime, localtime
+import sys, importlib, os, json
+#from inputs import devices, get_gamepad
+if sys.version_info[0] == 2: #Check python version
+    from Tkinter import *
+else:
+    from tkinter import *
 
 #Load system stuff
 log("INFO: Loading system files...")

@@ -1,5 +1,0 @@
-createTermWindow():
-Creates a terminal window.
-
-printf(string):
-Prints a string of text to the terminal.

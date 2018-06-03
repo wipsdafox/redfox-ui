@@ -1,11 +1,6 @@
 global data
-try:
-    data = json.load(open("sys/config.json")) #Load config file
+data = json.load(open("sys/config.json")) #Load config file
 
-except:
-    log("FATAL: Couldnt load config!")
-    while True:
-        
 
 #Set some vars.
 global enablegamepad

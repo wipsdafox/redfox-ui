@@ -66,7 +66,7 @@ def drawAppIcon(x, y, app):
         display.create_text(x + 128, y + 128, text = appConfig["displayname"], fill = white)
     else:
         try:
-            displayImage(x, y, "apps/" + appConfig["icon"])
+            save = displayImage(x, y, "apps/" + appConfig["icon"])
         except:
             log("Error displaying app icon!")
             save = display.create_rectangle(x, y, x + icon_size, y + icon_size, fill = appConfig["bgcolor"], tags = appConfig["file"])
@@ -112,18 +112,15 @@ def drawHome():
     iconsPerColumn = (screen_height / icon_size + icon_spacing) + icon_spacing
     json_files = [pos_json for pos_json in os.listdir('apps/') if pos_json.endswith('-config.json')] #Get all config files
     for config in json_files:
-        try:
-            log(config)
-            appname = config[:-12] #Remove "-config.json" from string
-            xx + 1
-            if(iconsPerRow != xx + 1):
+        log(config)
+        appname = config[:-12] #Remove "-config.json" from string
+        xx + 1
+        if(iconsPerRow != xx + 1):
+            drawAppIcon(x, y, appname) #Draw app icon.
+            x = x + icon_size + icon_spacing
+        else:
+            xx = 0
+            x = icon_spacing
+            y = y + icon_size + icon_spacing
+            if(iconsPerColumn != yy + 1):
                 drawAppIcon(x, y, appname) #Draw app icon.
-                x = x + icon_size + icon_spacing
-            else:
-                xx = 0
-                x = icon_spacing
-                y = y + icon_size + icon_spacing
-                if(iconsPerColumn != yy + 1):
-                    drawAppIcon(x, y, appname) #Draw app icon.
-            except:
-                log("error drawing icon")

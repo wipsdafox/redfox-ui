@@ -1,8 +1,31 @@
 createdialog(string):
 Create a dialog on screen showing the message as a string.
 
-displayImage(x, y, path):
-Display an image on screen
+displayImage(x, y, path, tag=, onclick=):
+Display an image on screen.
+x and y are position
+path is image path.
+tag is tkinter tags.
+onclick is what function to run on click of image
+
+displayLine(x, y, x2, y2, color=, onclick=):
+x and y are starting points
+x2 and y2 are end points
+color is color (expects hex value)
+onclick is what to run on click
+
+displayRectangle(x, y, x2, y2, color=, onclick=):
+x and y are starting points
+x2 and y2 are end points
+color is color (expects hex value)
+onclick is what to run on click
+
+displayText(x, y, text, color=, onclick=, center=):
+x and y is position
+text is text to display
+color is color (expects hex value)
+onclick is what to run on click
+center is whether or not to center text on pos
 
 preloadImage(path):
 Load an image into memory. Returns Tkinter PhotoImage instance. Rarely needed.

@@ -34,10 +34,30 @@ def preloadImage(path):
     imageStorage.append(img) #Store it in the global image variable
     return img #Return the file
 
-def displayImage(x, y, path, tag=0):
+def displayImage(x, y, path, tag=0, onclick=0):
     imgFile = preloadImage(path) #Load the image
     imgId = display.create_image(x, y, image = imgFile, anchor = NW, tags = tag) #Display the image and get an ID
+    if(onclick != 0):
+        display.tag_bind(imgId, '<ButtonPress-1>', onclick)
     return imgId #Return the ID
+
+def displayLine(x, y, x2, y2, color="#000000", onclick=0):
+    id = display.create_line(x, y, x2, y2, fill=color)
+    if(onclick != 0):
+        display.tag_bind(id, '<ButtonPress-1>', onclick)
+
+def displayRectangle(x, y, x2, y2, color="#000000", onclick = 0):
+    id = display.create_rectangle(x, y, x2, y2, fill = color)
+    if(onclick != 0):
+        display.tag_bind(id, '<ButtonPress-1>', onclick)
+
+def displayText(x, y, txt, color="#000000", onclick=0, center=0):
+    if(center == 0):
+        id = display.create_text(x, y, text = txt, fill = color, anchor=NW)
+    else:
+        id = display.create_text(x, y, text = txt, fill = color)
+    if(onclick != 0):
+        display.tag_bind(id, '<ButtonPress-1>', onclick)
 
 def deleteDialog(event):
     global currentDialog

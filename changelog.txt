@@ -2,6 +2,8 @@
 -Added update app
 -Fixed icon support
 -Added icons for all built-in (launchable) apps
+-Added more graphics commands
+-Bug fixes
 
 0.4a:
 -Clicking dialog boxes causes them to go away

@@ -1,0 +1,6 @@
+{
+  "icon": "clock.gif",
+  "displayname": "Clock",
+  "bgcolor": "#000000",
+  "file": "clock.py"
+}

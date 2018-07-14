@@ -1,0 +1,6 @@
+{
+  "icon": "settings.gif",
+  "displayname": "Settings",
+  "bgcolor": "#000000",
+  "file": "settings.py"
+}

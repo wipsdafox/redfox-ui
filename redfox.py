@@ -15,7 +15,11 @@ else:
 #Load system stuff
 log("INFO: Loading system files...")
 exec(open("sys/system.py").read())
-exec(open("sys/display.py").read())
+if(customHomeApp == "none"):
+    exec(open("sys/display.py").read())
+else:
+    exec(open("sys/" + customHomeApp).read())
+
 exec(open("sys/keyboard.py").read())
 
 if(enablegamepad == 1):

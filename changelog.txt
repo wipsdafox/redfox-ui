@@ -4,6 +4,7 @@
 -Added icons for all built-in (launchable) apps
 -Added more graphics commands
 -Bug fixes
+-You can now use a custom home app
 
 0.4a:
 -Clicking dialog boxes causes them to go away

@@ -34,6 +34,12 @@ def preloadImage(path):
     imageStorage.append(img) #Store it in the global image variable
     return img #Return the file
 
+def setPosition(item, x, y):
+    display.coords(item, x, y)
+
+def changePosition(item, x=0, y=0):
+    display.move(item, x, y)
+
 def displayImage(x, y, path, tag=0, onclick=0):
     imgFile = preloadImage(path) #Load the image
     imgId = display.create_image(x, y, image = imgFile, anchor = NW, tags = tag) #Display the image and get an ID

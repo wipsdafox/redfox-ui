@@ -5,3 +5,4 @@
 "gamepad_linux_fix": Enable/disable linux fix for gamepad (1 or 0)
 "icon_size": Icon size. All app icons must be this size for width/height or it wont display well
 "wallpaper": Wallpaper file. Expects a gif.
+"custom_home_app": Custom app to use for home screen. Must contain all graphics functions OR use Tk basics. Same for any apps run while this is enabled.
